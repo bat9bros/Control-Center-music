@@ -2,7 +2,7 @@
 
 Offline launcher and track manager.
 
-![Launcher](https://github.com/user-attachments/assets/d419a661-4806-406b-98bf-0b92cfe4b8c9)
+![Launcher]([https://github.com/user-attachments/assets/d419a661-4806-406b-98bf-0b92cfe4b8c9](https://github.com/user-attachments/assets/d419a661-4806-406b-98bf-0b92cfe4b8c9))
 
 ## Features
 
