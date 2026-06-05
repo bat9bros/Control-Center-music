@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>bat9bros Control</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>bat9bros Control Center</h1>
+
+  <!-- Соц иконки -->
+  <div class="social-links">
+    <div class="social-icon" onclick="openLink('https://soundcloud.com/hayp-143')">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145809.png">
+    </div>
+
+    <div class="social-icon" onclick="openLink('https://t.me/bat9bros')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+    </div>
+
+    <div class="social-icon" onclick="openLink('https://www.twitch.tv/bat9bros')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111668.png">
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button onclick="showTab('music')">Музыка</button>
+    <button onclick="showTab('launcher')">Лаунчер</button>
+  </div>
+
+  <!-- ================= MUSIC TAB ================= -->
+
+  <div id="musicTab">
+
+    <h2>Музыкальный менеджер</h2>
+
+    <!-- MINI PANEL -->
+    <div id="miniPanel" class="mini-panel">
+
+      <div id="motivationBox" class="motivation-box"></div>
+
+      <button onclick="startSession()">🎧 Начать сессию</button>
+      <button onclick="stopSession()">⏹ Остановить</button>
+
+      <h3>В работе</h3>
+      <div id="miniWork"></div>
+
+      <button onclick="launchFL()">🎧 FL Studio</button>
+      <button onclick="quickAddTrack()">➕ Новый трек</button>
+
+      <hr>
+
+      <h3>Лаунчер</h3>
+      <div id="miniPrograms"></div>
+
+    </div>
+
+    <!-- ADD TRACK (ОБЫЧНЫЙ РЕЖИМ) -->
+    <div class="add-track">
+      <input type="text" id="trackName" placeholder="Название трека">
+      <input type="text" id="trackGenre" placeholder="Жанр">
+      <input type="text" id="trackDescription" placeholder="Что доделать / заметки">
+      <button onclick="addTrack()">Добавить</button>
+    </div>
+
+    <!-- KANBAN -->
+    <div class="kanban">
+
+      <div class="column" data-status="В работе">
+        <h3>В работе</h3>
+        <div class="column-content" id="workColumn"></div>
+      </div>
+
+      <div class="column" data-status="Готово">
+        <h3>Готово</h3>
+        <div class="column-content" id="doneColumn"></div>
+      </div>
+
+      <div class="column" data-status="Релиз">
+        <h3>Релиз</h3>
+        <div class="column-content" id="releaseColumn"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ================= LAUNCHER TAB ================= -->
+
+  <div id="launcherTab" style="display:none">
+
+    <h2>Лаунчер</h2>
+
+    <input type="text" id="programName" placeholder="Название программы">
+    <input type="text" id="programPath" placeholder="Путь к .exe">
+    <button onclick="addProgram()">Добавить</button>
+    <button onclick="selectFile()">Выбрать файл</button>
+
+    <hr>
+
+    <div id="programList"></div>
+
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
